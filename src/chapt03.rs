@@ -12,7 +12,11 @@ pub fn expressions() {
 
     println!("The value of plus_one({number}) is: {x}");
 
+    // these functions are scoped to the expressions() function
+    // (not really a chapter 3 thing - I just wanted to try it)
     fn expression() {
+        // the final line in this block is the return value
+        // it is an expression rather than a statement
         let y = {
             let x = 3;
             x + 1
@@ -21,16 +25,18 @@ pub fn expressions() {
         println!("The value of 'let x=3; x+1' is: {y}");
     }
 
-    fn five() -> i32 {
-        5
-    }
-
     fn call_five() {
         let x = five();
 
         println!("The value of five() is: {x}");
     }
 
+    // a function that returns a value ends with an expression
+    fn five() -> i32 {
+        5
+    }
+
+    // a function that returns a value ends with an expression
     fn plus_one(x: i32) -> i32 {
         x + 1
     }
@@ -51,10 +57,12 @@ pub fn if_else(number: i32) {
 pub fn break_with_return() {
     let mut counter = 0;
 
+    // loops can be labeled - allowing you to specify which loop to break
     let result = 'break_loop_label: loop {
         counter += 1;
 
         if counter == 10 {
+            // break can be followed by an expression to return from the loop
             break 'break_loop_label counter * 2;
         }
     };
@@ -75,9 +83,11 @@ pub fn while_demo() {
 }
 
 pub fn for_demo() {
+    // integer iterators can be specified with .. notation
     for element in 1..4 {
         println!("the value is: {element}");
     }
+    // iterator mutator functions step_by() and rev() can be chained
     for element in (1..6).step_by(2).rev() {
         println!("the value is: {element}");
     }

@@ -1,4 +1,4 @@
-// Common programming concepts
+// Chapt 3. Common programming concepts
 
 use std::io;
 
@@ -22,6 +22,7 @@ pub fn expressions() {
             x + 1
         };
 
+        // the ! indicates a macro
         println!("The value of 'let x=3; x+1' is: {y}");
     }
 

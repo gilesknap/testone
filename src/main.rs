@@ -2,12 +2,17 @@
 
 mod chapt03;
 mod chapt04;
+mod chapt05;
 
 fn main() {
+    chapt05::rectangle();
+
     // remove me to run everything else
     if true {
         return;
     }
+
+    chapt05::structures();
 
     chapt04::mutable_string();
     chapt04::data_copy();

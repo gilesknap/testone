@@ -1,6 +1,6 @@
 // Chapter 6 - Enums, Pattern Matching
 
-// enum with 4 variants storing different amounts and types
+// enum with 6 variants storing different amounts and types
 #[derive(Debug)]
 enum Message {
     Quit,
@@ -30,7 +30,7 @@ impl Message {
                 Some(i) => println!("Optional variant {}", i),
                 None => println!("Optional variant with no parameter"),
             },
-            // cath all other variants and assign to variable other (or use _ to ignore)
+            // catch all other variants and assign to variable other (or use _ to ignore)
             other => println!("Unloved variant (catchall) {:?}", other),
         }
     }
@@ -48,10 +48,12 @@ pub fn test_message() {
     let m = Message::Quit;
     m.call();
     m._call2();
+    // WOOOO!! - this is a struct variant and look how you instantiate it!
     let m = Message::Move { x: 1, y: 2 };
     m.call();
     let m = Message::ChangeColor(1, 2, 3);
     m.call();
+    // Note for optional variants you need to use Some() or None - much more explicit than Python
     let m = Message::OptionalVariant(Some(1));
     m.call();
     let m = Message::OptionalVariant(None);

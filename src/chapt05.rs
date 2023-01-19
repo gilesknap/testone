@@ -31,8 +31,7 @@ pub fn structures() {
 
     println!("user2 email is {}", user2.email);
 
-    // a unit struct is a struct with no fields (like a tuple with no elements)
-    // but you can apply traits to it
+    // a unit struct is a struct with no fields (like a tuple with no elements) but you can apply traits to it
     struct AlwaysEqual;
 
     let _subject = AlwaysEqual;
@@ -43,8 +42,7 @@ pub fn structures() {
 //
 
 #[derive(Debug)]
-// this derives the struct from the Debug trait and allows us to print it
-// with :? (print) or :#? (pretty print)
+// this derives the struct from the Debug trait and allows us to print it with :? (print) or :#? (pretty print)
 struct Rectangle {
     width: u32,
     height: u32,
@@ -67,11 +65,10 @@ impl Rectangle {
     }
 }
 
-// A second impl block for the same struct (no good reason to do this, yet!
-// see Chapt 10)
+// A second impl block for the same struct (no good reason to do this, yet! see Chapt 10)
 impl Rectangle {
-    // this is an associated function but NOT a method as it does not take
-    // &self as an argument. This one is a constructor.
+    // this is an associated function but NOT a method as it does not take &self as an argument.
+    //This one is a constructor.
     fn square(size: u32) -> Self {
         Self {
             width: size,

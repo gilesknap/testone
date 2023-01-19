@@ -1,17 +1,20 @@
 // some experiments with functions et al
 
+mod chapt02;
 mod chapt03;
 mod chapt04;
 mod chapt05;
+mod chapt06;
 
 fn main() {
-    chapt05::rectangle();
+    chapt06::test_message();
 
     // remove me to run everything else
     if true {
         return;
     }
 
+    chapt05::rectangle();
     chapt05::structures();
 
     chapt04::mutable_string();
@@ -29,4 +32,6 @@ fn main() {
     chapt03::for_demo();
 
     chapt03::array_index();
+
+    chapt02::guessing_game();
 }

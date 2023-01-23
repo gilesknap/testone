@@ -5,14 +5,20 @@ mod chapt03;
 mod chapt04;
 mod chapt05;
 mod chapt06;
+mod chapt10;
+pub mod generics;
 
 fn main() {
-    chapt06::test_message();
+    generics::test_duck();
 
     // remove me to run everything else
     if true {
         return;
     }
+    chapt10::test_trait();
+    chapt10::test_mixup();
+
+    chapt06::test_message();
 
     chapt05::rectangle();
     chapt05::structures();

@@ -9,6 +9,7 @@ mod chapt10;
 pub mod generics;
 
 fn main() {
+    mutate();
     generics::test_duck();
 
     // remove me to run everything else
@@ -40,4 +41,18 @@ fn main() {
     chapt03::array_index();
 
     chapt02::guessing_game();
+}
+
+fn mutate() {
+    let mut v = Vec::new();
+    v.push(1);
+    v.push(2);
+
+    v[0] = 3;
+
+    let mut HashMap = std::collections::HashMap::new();
+    HashMap.insert("a", 1);
+    HashMap.insert("b", 2);
+
+    HashMap["a"] = 3;
 }

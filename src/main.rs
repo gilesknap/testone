@@ -7,15 +7,17 @@ mod chapt05;
 mod chapt06;
 mod chapt10;
 pub mod generics;
+pub mod polymorph;
 
 fn main() {
-    mutate();
-    generics::test_duck();
-
+    polymorph::test_poly();
     // remove me to run everything else
     if true {
         return;
     }
+    mutate();
+    generics::test_duck();
+
     chapt10::test_trait();
     chapt10::test_mixup();
 
@@ -50,9 +52,7 @@ fn mutate() {
 
     v[0] = 3;
 
-    let mut HashMap = std::collections::HashMap::new();
-    HashMap.insert("a", 1);
-    HashMap.insert("b", 2);
-
-    HashMap["a"] = 3;
+    let mut hash_map = std::collections::HashMap::new();
+    hash_map.insert("a", 1);
+    hash_map.insert("b", 2);
 }
